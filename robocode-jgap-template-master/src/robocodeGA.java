@@ -110,7 +110,7 @@ public class robocodeGA extends FitnessFunction{
         engine.runBattle(battleSpec, true); // run battle - wait till the battle is over
         engine.close(); // clean up engine
         
-        fitness = robotScore; // set fitness score
+        fitness = robotScore - enemyScore; // set fitness score
         
         return fitness > 0 ? fitness : 0; // return fitness score if it's over 0
     }

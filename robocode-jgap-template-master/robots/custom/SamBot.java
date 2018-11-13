@@ -3,12 +3,12 @@ package custom;
 import robocode.HitByBulletEvent;
 public class SamBot extends AdvancedRobot {
 boolean movingForward; 
-int AHEAD = 3308;
-int MOVE_INDEX = 2;
-int MOVE_DISTANCE = 21;
-int TURN_ANGLE = 10;
+int AHEAD = 4742;
+int MOVE_INDEX = 1;
+int MOVE_DISTANCE = 37;
+int TURN_ANGLE = 24;
 int BULLETS = 3;
-int TURN_GUN_ANGLE = 5;
+int TURN_GUN_ANGLE = 3;
 
 public void run() { 
 
@@ -20,6 +20,7 @@ setTurnLeft(180);
 waitFor(new TurnCompleteCondition(this)); 
 setTurnRight(180); 
 waitFor(new TurnCompleteCondition(this)); 
+turnGunRight(TURN_GUN_ANGLE); 
 } 
 } 
 public void onScannedRobot(ScannedRobotEvent e) { 
@@ -27,15 +28,15 @@ fire(BULLETS);
 } 
 
 public void onHitByBullet(HitByBulletEvent e) { 
-back(21); 
+turnRight(24); ahead(37); 
 }
 
 public void onHitWall(HitWallEvent e) { 
-if (movingForward) { setBack(3308); movingForward = false; 
+if (movingForward) { setBack(4742); movingForward = false; 
 turnRight(TURN_GUN_ANGLE); 
 } 
 else { 
-setAhead(3308); 
+setAhead(4742); 
 movingForward=true; 
 }
 } 

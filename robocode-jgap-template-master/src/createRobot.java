@@ -69,6 +69,7 @@ public class createRobot {
 					out.append("waitFor(new TurnCompleteCondition(this)); \n");
 					out.append("setTurnRight(180); \n");
 					out.append("waitFor(new TurnCompleteCondition(this)); \n");
+					out.append("turnGunRight(TURN_GUN_ANGLE); \n");
 					out.append("} \n");
 					out.append("} \n");
 					out.append("public void onScannedRobot(ScannedRobotEvent e) { \n");
