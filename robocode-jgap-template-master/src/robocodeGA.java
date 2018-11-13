@@ -20,7 +20,7 @@ public class robocodeGA extends FitnessFunction{
 	// set population size per generation
 	public static final int POPULATION_SIZE = 10;
 	// amount of chromosomes
-	public static final int CHROMOSOME_AMOUNT = 1;
+	public static final int CHROMOSOME_AMOUNT = 6;
 	// track scores
 	public static int robotScore,enemyScore;
 
@@ -33,9 +33,13 @@ public class robocodeGA extends FitnessFunction{
 	    
 	    //set up sample genes - add multiple genes to the array
 	    Gene[] sampleGenes = new Gene[ CHROMOSOME_AMOUNT ];
-		sampleGenes[0] = new DoubleGene(conf, 300, 600 ); 
-		
-		/*sampleGenes[1] = new DoubleGene(conf,-200,200)*/
+		sampleGenes[0] = new DoubleGene(conf, 3000, 5000 ); 
+		sampleGenes[1] = new DoubleGene(conf, 0, 3);
+		sampleGenes[2] = new DoubleGene(conf, 5, 90);
+		sampleGenes[3] = new DoubleGene(conf, 5, 30);
+		sampleGenes[4] = new DoubleGene(conf, 1, 4);
+		sampleGenes[5] = new DoubleGene(conf, 3, 10);
+
 
 		IChromosome sampleChromosome = new Chromosome(conf, sampleGenes); // create chromo from genes
 		conf.setSampleChromosome(sampleChromosome); // set chromo to conf
@@ -100,7 +104,7 @@ public class robocodeGA extends FitnessFunction{
         engine.setVisible(false); // show battle in GUI ?
         
         BattlefieldSpecification battlefield = new BattlefieldSpecification(800, 600); // battle field size
-        RobotSpecification[] selectedRobots = engine.getLocalRepository("sample.VelociRobot,sample.RamFire,sample.Fire,sample.Crazy,custom.SamBot*"); // which sample bots to take to battle
+        RobotSpecification[] selectedRobots = engine.getLocalRepository("sample.Crazy,custom.SamBot*"); // which sample bots to take to battle
         BattleSpecification battleSpec = new BattleSpecification(numberOfRounds, battlefield, selectedRobots);
         
         engine.runBattle(battleSpec, true); // run battle - wait till the battle is over
