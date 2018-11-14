@@ -7,7 +7,7 @@ The goal of this project is to apply G.A. concepts by creating a tank on Robocod
 
 First, you must download and install JGAP and Robocode libraries, which can be founded [here](https://sourceforge.net/projects/jgap/files/jgap/JGAP%203.6.3/) and [here](https://sourceforge.net/projects/robocode/).
 
-Then, after clone this project, add the JGAP .jar file and also all the .jar files inside /lib folder from Robocode to project's *BUILDPATH*.
+Then, after clone this project, add the JGAP .jar file and also all the .jar files inside /lib folder from Robocode to the project's *BUILDPATH*.
 
 **EXECUTING**
 
